@@ -1,7 +1,7 @@
 export default class ComponentFactory {
 
     createCard(title, subtitle, text, buttons) {
-        return $(
+        return $(`
             <div class="col mb-4">
                 <div class="card">
                     <div class="card-body">
@@ -12,7 +12,7 @@ export default class ComponentFactory {
                         ${buttons}
                     </div>
                 </div>
-            </div>
+            </div>`
         );
     }
      }

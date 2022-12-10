@@ -1,3 +1,5 @@
+
+
 export default class ProductCollection {
     // Private members are prefixed with an underscore.
     // This is by convention only. Everything is still public! 😱

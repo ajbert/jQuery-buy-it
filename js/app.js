@@ -7,8 +7,9 @@ import Product from "./models/Product.js";
 import StorePage from "./components/StorePage.js";
 import Hat from "./models/Hat.js";
 import Socks from "./models/Socks.js";
-import productsArray from "./data/products.js";
-console.log(productsArray)
+import products from "./data/products";
+import ProductFactory from "./components/ProductFactory";
+
 
 
 
@@ -18,16 +19,18 @@ console.log(productsArray)
 // check this out for simple class syntax
 // and aggregation example
 let productList = new ProductCollection();
+let productFactory = new ProductFactory();
 
 // create some products
-let redShirt = new Product(new TShirt({name: 'Red Shirt', size: 'M', color: 'red'}),9.99);
-let whiteShoes = new Product(new Shoes ({name: 'White Shoes', size: '10', style: 'casual'}),49.99);
-let blueJeans = new Product(new Pants( {name: 'Blue Jeans', size: 'W32 L32', color: 'blue', style: 'jeans'}) ,29.99);
+// let redShirt = new Product(new TShirt({name: 'Red Shirt', size: 'M', color: 'red'}),9.99);
+// let whiteShoes = new Product(new Shoes ({name: 'White Shoes', size: '10', style: 'casual'}),49.99);
+// let blueJeans = new Product(new Pants( {name: 'Blue Jeans', size: 'W32 L32', color: 'blue', style: 'jeans'}) ,29.99);
 
 // put products in a list
-productList.addItem(redShirt);
-productList.addItem(whiteShoes);
-productList.addItem(blueJeans);
+// productList.addItem(redShirt);
+// productList.addItem(whiteShoes);
+// productList.addItem(blueJeans);
+productFactory.createProduct(products, productList)
 console.log(productList, productList.items);
 
 // create/output page

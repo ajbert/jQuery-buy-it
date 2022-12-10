@@ -21,6 +21,7 @@ class StorePage {
         let $container = $('<div class="row row-cols-1 row-cols-lg-3">');
         let componentFactory = new ComponentFactory();
 
+
         // loop through products, creating the cards and buttons
         products.forEach(product => {
             let $card = componentFactory.createCard(
@@ -43,7 +44,7 @@ class StorePage {
             $card.find('.add-to-wishlist').on('click', () => {this.addToWishList(product)});
 
             // add the card to the container
-            $container.append($card);
+            $container.append($card)
         });
 
         // output the container to the page
