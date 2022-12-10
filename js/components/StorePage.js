@@ -143,7 +143,7 @@ class StorePage {
             let $tr = $(`
                 <tr>
                     <td>
-                        <h5>${cartItem.product.name}</h5>
+                        <h5>${cartItem.product.item.name}</h5>
                         <h6 class="text-muted">${cartItem.product.formattedPrice} &times; ${cartItem.quantity}</h6>
                     </td>
                     <td class="text-end">
