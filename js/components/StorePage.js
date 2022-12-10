@@ -33,7 +33,7 @@ class StorePage {
                                 ${product.item.height ? '<b>Height:</b> ' + product.item.height + '<br>' : ''}
                                 ${product.item.gender ? '<b>Gender:</b> ' + product.item.gender + '<br>' : ''}
                                 ${product.item.material ? '<b>Gender:</b> ' + product.item.material + '<br>' : ''}
-                                ${product.item.floats ? '<b>Gender:</b> ' + product.item.floats + '<br>' : ''}`,
+                                ${product.item.floats ? '<b>Floats:</b> ' + product.item.floats + '<br>' : ''}`,
                 `<button class="add-to-cart btn btn-lg btn-primary w-100">BUY IT NOW!</button>
                             <button class="add-to-wishlist btn btn-sm btn-outline-secondary w-100 mt-2">Buy It Later</button>`
             );
