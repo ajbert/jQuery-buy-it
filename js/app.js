@@ -7,8 +7,10 @@ import Product from "./models/Product.js";
 import StorePage from "./components/StorePage.js";
 import Hat from "./models/Hat.js";
 import Socks from "./models/Socks.js";
-import products from "./data/products";
-import ProductFactory from "./components/ProductFactory";
+// import ProductFactory from "./components/ProductFactory";
+// import products from "./data/products";
+
+
 
 
 
@@ -19,7 +21,7 @@ import ProductFactory from "./components/ProductFactory";
 // check this out for simple class syntax
 // and aggregation example
 let productList = new ProductCollection();
-let productFactory = new ProductFactory();
+//let productFactory = new ProductFactory();
 
 // create some products
 // let redShirt = new Product(new TShirt({name: 'Red Shirt', size: 'M', color: 'red'}),9.99);
@@ -30,8 +32,23 @@ let productFactory = new ProductFactory();
 // productList.addItem(redShirt);
 // productList.addItem(whiteShoes);
 // productList.addItem(blueJeans);
-productFactory.createProduct(products, productList)
-console.log(productList, productList.items);
+let products = [
+    {type: 't-shirt', name: 'Red Shirt', size: 'M', color: 'red', price: 9.99},
+    {type: 'shoes', name: 'White Shoes', size: '10', style: 'casual', price: 49.99},
+    {type: 'pants', name: 'Blue Jeans', size: 'W32 L32', color: 'blue', style: 'jeans', price: 29.99},
+    {type: 'hat', name: 'Nike Baseball Hat', size: 'OSFM', color: 'navy', material: 'cotton', floats: false, price: 17.99},
+    {type: 'pants', name: 'Lazy Pants', size: 'XL', color: 'gray', style: 'sweatpants', price: 14.99},
+    {type: 'shirt', name: 'Plaid Flannel', size: 'L', color: 'red/black', price: 23.99},
+    {type: 'shoes', name: 'Black Pump Heels', size: '8.5', style: 'dress', price: 49.99},
+    {type: 'socks', name: 'Compression Socks', size: '6-9', height: 'knee', gender: 'unisex', price: 6.99},
+    {type: 'hat', name: 'Sombrero', size: 'XL', color: 'fiesta', material: 'straw', floats: true, price: 13.99},
+];
+
+let types = {'hat': Hat, 'pants' : Pants, 'shoes' : Shoes, 'socks' : Socks, 't-shirt' : TShirt};
+
+createProduct(products, types, productList)
+console.log(productList, types, productList.items);
+
 
 // create/output page
 const cart = new Cart();
@@ -40,7 +57,10 @@ const page = new StorePage(cart, '#products', wishList);
 page.outputProducts(productList.items);
 
 
-
+function createProduct(products, types, productList){
+    products.forEach(item => productList.addItem(new Product( (item), item.price)));
+    return productList;
+}
 
 
 

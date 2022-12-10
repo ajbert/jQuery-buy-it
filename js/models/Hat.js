@@ -3,14 +3,14 @@ export default class Hat{
  size = '';
  color = '';
  material = '';
- floats = '';
+ floats = false;
 
  constructor(props) {
-     this.name =   props.name;
-     this.size =   props.size;
-     this.color =   props.color;
-     this.material = props.material;
-     this.floats = props.floats;
+     this.name =   props.name ?? '';
+     this.size =   props.size ?? '';
+     this.color =   props.color ?? '';
+     this.material = props.material ?? '';
+     this.floats = props.floats ?? false;
  }
 
 
